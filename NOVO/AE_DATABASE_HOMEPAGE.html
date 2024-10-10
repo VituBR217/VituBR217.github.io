@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APOLLO ENGINEERING DATABASE</title>
+    <link rel="stylesheet" href="AE_DATABASE_HOMEPAGE.css">
+</head>
+<body>
+    <div class="container" id="login-container">
+        <div class="header">
+            <h1>APOLLO ENGINEERING DATABASE</h1>
+            <p>CONFIDENTIAL ACCESS ONLY</p>
+        </div>
+
+        <div class="content" id="login-form">
+            <p>ENTER LOGIN CREDENTIALS:</p>
+
+            <input type="text" id="login" placeholder="LOGIN">
+            <input type="password" id="password" placeholder="PASSWORD">
+            <button onclick="validateLogin()">SUBMIT</button>
+
+            <p id="error-message"></p>
+        </div>
+    </div>
+
+    <div class="container" id="access-container" style="display: none;">
+        <div class="header">
+            <h1>APOLLO ENGINEERING DATABASE</h1>
+            <p>ACCESS GRANTED</p>
+        </div>
+
+        <div class="content">
+            <p>WELCOME TO THE APOLLO ENGINEERING DATABASE.</p>
+            <p>SELECT AN ASSET TO PROCEED:</p>
+
+            <div class="menu">
+                <button onclick="denyAccess()">ACCESS TYPE-H: TYRANNOSAURUS</button>
+                <button onclick="denyAccess()">ACCESS TYPE-H: SPINNOSAURUS</button>
+                <button onclick="denyAccess()">ACCESS TYPE-H: GIGANOTOSAURUS</button>
+                <button onclick="denyAccess()">ACCESS TYPE-H: CARNOTAURUS</button>
+                <button onclick="grantAccess()">ACCESS TYPE-H: UTAHRAPTOR</button>
+                <button onclick="denyAccess()">ACCESS TYPE-H: UNKNOWN SPECIMEN</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="access-modal" class="modal">
+        <div class="modal-content">
+            <p id="access-message">Processing access request...</p>
+            <button onclick="closeModal()">CLOSE</button>
+        </div>
+    </div>
+
+    <script>
+        function validateLogin() {
+            const login = document.getElementById('login').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            if (login === "CARTERLAWRENCE" && password === "GRANTGOD1503") {
+                document.getElementById('login-container').style.display = 'none';
+                document.getElementById('access-container').style.display = 'block';
+            } else {
+                errorMessage.textContent = "ACCESS DENIED.";
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('password').style.display = 'none';
+            }
+        }
+
+        function grantAccess() {
+    document.getElementById('access-message').textContent = "ACCESS GRANTED. YOU ARE AUTHORIZED TO VIEW TYPE-H FILES.";
+    document.getElementById('access-modal').style.display = 'block';
+
+    // Redirect after 2 seconds
+    setTimeout(function() {
+        window.location.href = "AE_34_1997.html";
+    }, 2000); // 2000 milliseconds = 2 seconds delay
+}
+        
+
+        function denyAccess() {
+            document.getElementById('access-message').textContent = "ACCESS DENIED. YOU DO NOT HAVE AUTHORIZATION TO VIEW THESE FILES.";
+            document.getElementById('access-modal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('access-modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

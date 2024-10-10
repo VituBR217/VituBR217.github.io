@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HYPERENDOCRIN UTAHRAPTOR OPTIONS</title>
+    <link rel="stylesheet" href="AE_34_1997.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ACCESS: HYPERENDOCRIN UTAHRAPTOR</h1>
+            <p>CONFIDENTIAL FILE - SELECT AN OPTION</p>
+        </div>
+
+        <div class="content">
+            <p>SELECT FILE TO VIEW:</p>
+
+            <div class="menu">
+                <button onclick="viewFile('AE_34_1997')">AE_34_1997</button>
+                <button onclick="viewFile('AE_34_1997_GENETIC_ASSETS')">AE_34_1997_GENETIC_ASSETS</button>
+                <button onclick="viewFile('AE_34_1997_GENETIC_ISSUE')">AE_34_1997_GENETIC_ISSUE</button>
+                <button onclick="viewFile('AE_34_1997_ANOMALIES_ISSUE')">AE_34_1997_ANOMALIES_ISSUE</button>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Access restricted to authorized personnel only. Unauthorized viewing is punishable by prosecution.</p>
+        </div>
+    </div>
+
+    <script>
+        function viewFile(fileName) {
+            alert("Opening " + fileName + " file...");
+            // Here you can link to a new page or show more details for each file.
+        }
+        function grantAccess() {
+    document.getElementById('access-message').textContent = "ACCESS GRANTED. YOU ARE AUTHORIZED TO VIEW TYPE-H FILES.";
+    document.getElementById('access-modal').style.display = 'block';
+
+    // Redirect after 2 seconds
+    setTimeout(function() {
+        window.location.href = "AE_34_1997_CONFIDENTIAL_FILE.html";
+    }, 2000); // 2000 milliseconds = 2 seconds delay
+}
+
+    </script>
+</body>
+</html>

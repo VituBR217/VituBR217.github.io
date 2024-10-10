@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: black;
+    color: #00ff00;
+    text-align: center;
+    user-select: none; /* Impede a seleção de texto na página */
+}
+
+img.no-save {
+    pointer-events: none; /* Desabilita a interação com a imagem (sem salvar) */
+}
+
+.container {
+    border: 3px solid #00ff00;
+    padding: 30px;
+    width: 80%;
+    margin: 50px auto;
+    background-color: #000000;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 14px;
+}
+
+.content p {
+    margin: 20px 0;
+}
+
+.content img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.content img:hover {
+    transform: scale(1.05);
+}
+
+.footer {
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+/* Allow zoom in/out functionality */
+.zoomable {
+    width: 100%;
+    height: auto;
+    pointer-events: none; /* Desabilita a interação com as imagens */
+}
+
+.zoom-container {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.zoomable:hover {
+    transform: scale(1.2); /* Increase zoom on hover */
+}
+
+.zoomable:active {
+    transform: scale(1); /* Reset zoom on click */
+}
+
+/* Optional: adding support for pinch zoom for mobile devices */
+@media (max-width: 768px) {
+    .zoomable {
+        touch-action: pinch-zoom;
+    }
+}
